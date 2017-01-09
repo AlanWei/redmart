@@ -53,10 +53,6 @@ function generatePosition() {
   return array;
 }
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 function skiing(skiingMap) {
   var positions = generatePosition();
   var potentialPaths = positions.map(function (p) {
@@ -91,6 +87,7 @@ function skiing(skiingMap) {
     });
   });
   var longestDrop = 0;
+  // get longestDrop
   longestRoutes.forEach(function (r) {
     var drop = r.startPoint - r.endPoint;
     if (drop > longestDrop) {
